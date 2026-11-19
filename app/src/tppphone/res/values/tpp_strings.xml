@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- TPP Phone screens. -->
+<resources>
+    <!-- Home -->
+    <string name="tpp_home_help">Ayuda y acerca de</string>
+    <string name="tpp_status_ready_title">Listo para recibir llamadas</string>
+    <string name="tpp_status_ready_body">Podés cerrar la app. Cuando te llamen, el celular va a sonar.</string>
+    <string name="tpp_status_connecting_title">Conectando…</string>
+    <string name="tpp_status_connecting_body">Un momento, estamos conectando tu cuenta.</string>
+    <string name="tpp_status_problem_title">No podés recibir llamadas</string>
+    <plurals name="tpp_problems_count">
+        <item quantity="one">Hay 1 cosa para resolver.</item>
+        <item quantity="other">Hay %d cosas para resolver.</item>
+    </plurals>
+    <string name="tpp_check_account_reconnecting">Reconectando…</string>
+    <plurals name="tpp_status_problem_body">
+        <item quantity="one">Hay 1 cosa para resolver. Tocá acá y te guiamos.</item>
+        <item quantity="other">Hay %d cosas para resolver. Tocá acá y te guiamos.</item>
+    </plurals>
+    <string name="tpp_dial_title">Para llamarte, desde la plataforma prepaga de TPP, el interno deberá marcar:</string>
+    <string name="tpp_dial_help">9 + tu número de celular, así como se muestra arriba.</string>
+    <string name="tpp_voice_title">Mensajes de voz</string>
+    <string name="tpp_voice_channel_name">Mensajes de voz</string>
+    <string name="tpp_voice_delete_dialog">¿Borrar este mensaje de voz?</string>
+    <string name="tpp_voice_delete_confirm">Borrar</string>
+    <string name="tpp_contacts_link">Mostrar los nombres de mis contactos</string>
+    <string name="tpp_voice_offline">Sin conexión</string>
+    <string name="tpp_voice_play">Escuchar</string>
+    <string name="tpp_voice_pause">Pausar</string>
+    <string name="tpp_calls_title">Llamadas recibidas</string>
+    <string name="tpp_calls_empty">Todavía no recibiste llamadas.</string>
+    <!-- 0822 is not a link: it does not take calls from mobiles. -->
+    <string name="tpp_home_footer"><![CDATA[Esta app sirve solamente para recibir llamadas desde la plataforma prepaga de TPP: <b>0822-180-6633</b> / <a href="tel:01162406633">11-6240-6633</a>.]]></string>
+
+    <!-- Incoming call -->
+    <string name="tpp_call_incoming">Llamada entrante</string>
+    <string name="tpp_call_origin">Desde la plataforma prepaga de TPP</string>
+    <string name="tpp_call_swipe_hint">Deslizá hacia arriba para atender</string>
+    <string name="tpp_call_answer">Atender</string>
+    <string name="tpp_call_decline">Rechazar</string>
+
+    <!-- First run -->
+    <string name="tpp_first_run_title">Recibí llamadas desde todos los penales argentinos ahorrando en cada comunicación.</string>
+    <string name="tpp_first_run_body">Para empezar, activá tu línea. Es gratis y toma un minuto.</string>
+    <string name="tpp_first_run_step1_title">Escribí tu número de celular</string>
+    <string name="tpp_first_run_step1_body">El del celular donde querés recibir las llamadas.</string>
+    <string name="tpp_first_run_step2_title">Te mandamos un código por WhatsApp</string>
+    <string name="tpp_first_run_step2_body">Así comprobamos que el número es tuyo. Copialo con el botón.</string>
+    <string name="tpp_first_run_step3_title">Escribilo y listo</string>
+    <string name="tpp_first_run_step3_body">Se pega solo al volver a la app y listo.</string>
+    <string name="tpp_first_run_whatsapp">Activar</string>
+
+    <!-- Problem screen (mockup Problema.dc.html) -->
+    <string name="tpp_problem_all_ok_title">Todo en orden</string>
+    <string name="tpp_problem_all_ok_body">Tu celular está listo para recibir llamadas.</string>
+    <string name="tpp_problem_ok">Bien</string>
+    <string name="tpp_problem_pending">Esperando…</string>
+    <string name="tpp_problem_recommended">Recomendado</string>
+    <string name="tpp_problem_home">Volver a la pantalla principal</string>
+
+    <string name="tpp_check_internet_ok">Conexión a internet</string>
+    <string name="tpp_check_internet_problem">Sin conexión a internet</string>
+    <string name="tpp_check_internet_body">Conectate a una red Wi-Fi o activá los datos móviles.</string>
+    <string name="tpp_check_internet_action">Abrir ajustes de red</string>
+
+    <string name="tpp_check_account_ok">Cuenta activa</string>
+    <string name="tpp_check_account_problem">La cuenta no está conectada</string>
+    <string name="tpp_check_account_body">Probá reconectar. Si sigue así, escribinos por WhatsApp.</string>
+    <string name="tpp_check_account_action">Reconectar</string>
+
+    <string name="tpp_check_notifications_ok">Notificaciones</string>
+    <string name="tpp_check_notifications_problem">Notificaciones desactivadas</string>
+    <string name="tpp_check_notifications_body">Sin notificaciones el celular no puede avisarte que te están llamando.</string>
+    <string name="tpp_check_notifications_action">Activar notificaciones</string>
+
+    <string name="tpp_check_microphone_ok">Micrófono</string>
+    <string name="tpp_check_microphone_problem">Micrófono sin permiso</string>
+    <string name="tpp_check_microphone_body">Sin micrófono, del otro lado no te escuchan.</string>
+    <string name="tpp_check_microphone_action">Permitir micrófono</string>
+
+    <string name="tpp_check_full_screen_ok">Llamada en pantalla completa</string>
+    <string name="tpp_check_full_screen_problem">Llamada en pantalla completa desactivada</string>
+    <string name="tpp_check_full_screen_body">Sin este permiso la llamada no aparece cuando el celular está bloqueado.</string>
+    <string name="tpp_check_full_screen_action">Activar pantalla completa</string>
+
+    <string name="tpp_check_battery_ok">Batería sin restricciones</string>
+    <string name="tpp_check_battery_problem">Batería sin restricciones</string>
+    <string name="tpp_check_battery_body">Para que suene siempre, aunque no abras la app por varios días. Buscá TPP Phone en la lista y elegí "Sin restricciones". <b>No aumenta el consumo de batería.</b></string>
+    <string name="tpp_check_battery_action">Abrir ajustes de batería</string>
+
+    <string name="tpp_check_autostart_title">Inicio automático</string>
+    <string name="tpp_check_autostart_body">En este celular, activá <b>Inicio automático</b> para TPP Phone, así suena aunque no abras la app.</string>
+    <string name="tpp_check_autostart_action">Abrir inicio automático</string>
+
+    <!-- About (licenses are in "Sobre nosotros") -->
+    <string name="tpp_about_title">Ayuda y acerca de</string>
+    <string name="tpp_about_version">Versión %s (piloto)</string>
+    <string name="tpp_about_check">Revisar si puedo recibir llamadas</string>
+    <string name="tpp_about_email">Ayuda vía email</string>
+    <string name="tpp_about_email_subject">Ayuda con TPP Phone</string>
+    <string name="tpp_about_email_none">No hay una app de correo. Escribinos a %1$s</string>
+    <string name="tpp_about_privacy">Política de privacidad</string>
+    <string name="tpp_about_us">Sobre nosotros</string>
+    <string name="tpp_back">Volver</string>
+
+    <!-- About us. -->
+    <string name="tpp_about_us_body">TPP es la plataforma de telefonía prepaga para distintos servicios penitenciarios en Argentina, operada por Telefonía Pública y Privada S.A., en cumplimiento y de acuerdo a la Licencia Única de Servicios de Telecomunicaciones -actualmente bajo el marco de Licencia Única Argentina Digital / Licencia TIC otorgada y administrada por la ENACOM. Con TPP Phone podés recibir llamadas, en tu celular, por internet, desde la plataforma prepaga de TPP provenientes de cualquier centro penitenciario.</string>
+    <string name="tpp_about_us_shop">Comprar tarjetas prepagas</string>
+    <string name="tpp_about_us_phones"><![CDATA[Plataforma prepaga de TPP: <b>0822-180-6633</b> / <a href="tel:01162406633">11-6240-6633</a>]]></string>
+    <string name="tpp_about_us_legal">TPP Phone es software libre, distribuido bajo la licencia GNU GPL versión 3 o posterior, y se basa en Linphone © Belledonne Communications. Se ofrece sin ninguna garantía. Usa las fuentes Plus Jakarta Sans y JetBrains Mono (SIL Open Font License 1.1).</string>
+    <string name="tpp_about_us_source">Código fuente y licencia GPLv3</string>
+    <string name="tpp_about_us_copyright">© 2026 Telefonía Pública y Privada S.A.</string>
+    <string name="tpp_licenses_title">Licencias</string>
+    <string name="tpp_terms_title">Términos y condiciones</string>
+    <!-- Signup -->
+    <string name="tpp_cancel">Cancelar</string>
+    <string name="tpp_signup_help">Activar por WhatsApp</string>
+    <string name="tpp_signup_error_invalid_number">Ese número no parece un celular válido. Revisalo y probá de nuevo.</string>
+    <string name="tpp_signup_error_rate_limited">Pediste muchos códigos. Probá más tarde.</string>
+    <string name="tpp_signup_error_network">No pudimos conectarnos. Revisá tu internet y probá de nuevo.</string>
+    <string name="tpp_signup_error_activation">No pudimos activar tu línea. Probá en unos minutos.</string>
+    <string name="tpp_number_header">Tu número</string>
+    <string name="tpp_number_title">¿En qué celular querés recibir las llamadas?</string>
+    <string name="tpp_number_body">Te vamos a mandar un código por WhatsApp a ese número.</string>
+    <string name="tpp_number_country">País</string>
+    <string name="tpp_number_country_search">Buscar país</string>
+    <string name="tpp_number_hint">Número de celular</string>
+    <string name="tpp_number_send">Enviar código</string>
+    <string name="tpp_number_confirm">Te vamos a enviar un WhatsApp al %1$s. ¿Es correcto?</string>
+    <string name="tpp_number_confirm_yes">Sí, enviar</string>
+    <string name="tpp_number_confirm_fix">Corregir</string>
+    <string name="tpp_number_replace_line">Este celular ya recibe llamadas para el %1$s. ¿Querés cambiarlo por el %2$s?</string>
+    <string name="tpp_number_replace_yes">Cambiar</string>
+    <string name="tpp_code_header">Código</string>
+    <string name="tpp_code_title">Escribí el código</string>
+    <string name="tpp_code_body">Te mandamos un código por WhatsApp al %1$s. Si tocás \"Copiar código\" y volvés, lo pegamos solos.</string>
+    <string name="tpp_code_hint">000000</string>
+    <string name="tpp_code_activating">Activando tu línea…</string>
+    <string name="tpp_code_expired">El código venció. Pedí uno nuevo.</string>
+    <string name="tpp_code_fallback_intro">¿Tenés inconvenientes para recibir el código? Podés:</string>
+    <string name="tpp_code_fallback_or">O probar este otro método:</string>
+    <string name="tpp_code_confirm">Confirmar</string>
+    <string name="tpp_code_resend">Reenviar código</string>
+    <string name="tpp_code_resent">Te mandamos un código nuevo.</string>
+    <plurals name="tpp_code_wrong">
+        <item quantity="one">Código incorrecto. Te queda %1$d intento.</item>
+        <item quantity="other">Código incorrecto. Te quedan %1$d intentos.</item>
+    </plurals>
+    <string name="tpp_line_moved_header">Tu línea</string>
+    <string name="tpp_line_moved_title">Tu línea se activó en otro celular</string>
+    <string name="tpp_line_moved_body">Este celular dejó de recibir llamadas. Si no fuiste vos, activala de nuevo acá.</string>
+    <string name="tpp_line_moved_activate">Activar acá</string>
+    <string name="tpp_help_wait_header">Ayuda por WhatsApp</string>
+    <string name="tpp_help_wait_title">Esperando tu WhatsApp…</string>
+    <string name="tpp_help_wait_body">Te abrimos WhatsApp con un mensaje listo. Tocá Enviar y volvé a esta pantalla: tu línea se activa sola, para el número de ese WhatsApp. Puede demorar hasta un minuto.</string>
+    <string name="tpp_help_wait_reopen">Abrir WhatsApp de nuevo</string>
+    <string name="tpp_help_wait_retry">Reintentar</string>
+    <string name="tpp_help_wait_offline">Sin conexión, seguimos intentando…</string>
+    <string name="tpp_help_wait_expired">La espera venció. Pedí ayuda de nuevo.</string>
+    <string name="tpp_help_wait_done">Activamos tu línea %1$s</string>
+    <string name="tpp_probalo_link">Probalo</string>
+    <string name="tpp_probalo_dialog">En 1 minuto vas a recibir una llamada de prueba y vas a escuchar tu voz. Podés bloquear el celular.</string>
+    <string name="tpp_probalo_call_me">Llamarme</string>
+    <string name="tpp_probalo_scheduled">Listo. En 1 minuto te llamamos.</string>
+    <string name="tpp_probalo_in_progress">Ya tenés una prueba en camino. Esperá la llamada.</string>
+    <string name="tpp_probalo_busy">Hay muchas pruebas en este momento. Probá en unos minutos.</string>
+    <string name="tpp_probalo_limit">Ya hiciste varias pruebas hoy. Probá mañana.</string>
+    <string name="tpp_probalo_failed">No pudimos programar la prueba. Probá más tarde.</string>
+    <string name="tpp_delete_link">Eliminar mi cuenta y audios</string>
+    <string name="tpp_delete_dialog">¿Eliminar tu cuenta de TPP Phone? Vas a dejar de recibir llamadas en este celular y se van a borrar tus mensajes de voz. Si querés volver, activá la app de nuevo.</string>
+    <string name="tpp_delete_confirm">Eliminar</string>
+    <string name="tpp_delete_done">Tu cuenta de TPP Phone se eliminó.</string>
+    <string name="tpp_delete_failed">No pudimos eliminar la cuenta. Probá más tarde.</string>
+    <string name="tpp_delete_in_progress">Eliminando tu cuenta…</string>
+</resources>

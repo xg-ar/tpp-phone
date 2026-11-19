@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="row"
+            type="ar.com.tpp.phone.logic.ReceivedCallRow" />
+        <variable
+            name="isLast"
+            type="Boolean" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingTop="14dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="14dp">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@{row.missed ? @drawable/tpp_circle_tint : @drawable/tpp_circle_success}"
+                android:importantForAccessibility="no"
+                android:padding="10dp"
+                android:src="@{row.missed ? @drawable/tpp_ic_call_missed : @drawable/tpp_ic_call_received}" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TppText.SemiBold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@{row.title}"
+                    tools:text="TPP - Unidad 9 La Plata" />
+
+                <TextView
+                    style="@style/TppText.Secondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="@{row.whenText}"
+                    tools:text="Hoy, 18:42" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/TppText.Secondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@{row.detail}"
+                android:textColor="@{row.missed ? @color/tpp_brand_dark : @color/tpp_text_secondary}"
+                tools:text="12 min" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/tpp_border"
+            android:visibility="@{isLast ? View.GONE : View.VISIBLE}" />
+    </LinearLayout>
+</layout>

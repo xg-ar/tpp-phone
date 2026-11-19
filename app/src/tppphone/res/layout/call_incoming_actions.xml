@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- tppphone override: the swipe bar is used whether the screen is locked or not. -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="org.linphone.ui.call.viewmodel.CurrentCallViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/locked_screen_bottom_bar"
+            layout="@layout/call_incoming_actions_screen_locked"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            bind:viewModel="@{viewModel}" />
+    </FrameLayout>
+</layout>

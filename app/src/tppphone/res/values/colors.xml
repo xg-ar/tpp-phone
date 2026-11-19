@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- tppphone override: Linphone's main color (orange) becomes TPP red in every reused screen
+     (call screen, notifications, launcher background). -->
+<resources>
+    <color name="orange_main_100">#FCE9EA</color>
+    <color name="orange_main_500">#EE1B22</color>
+</resources>

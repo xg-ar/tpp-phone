@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Start destination is chosen in TppMainActivity (account or not). -->
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/tpp_nav_graph"
+    app:startDestination="@id/firstRunFragment">
+
+    <fragment
+        android:id="@+id/firstRunFragment"
+        android:name="ar.com.tpp.phone.ui.firstrun.FirstRunFragment">
+        <action
+            android:id="@+id/action_firstRun_to_testAccount"
+            app:destination="@id/testAccountFragment" />
+        <action
+            android:id="@+id/action_firstRun_to_number"
+            app:destination="@id/numberFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/numberFragment"
+        android:name="ar.com.tpp.phone.ui.signup.NumberFragment">
+        <argument
+            android:name="prefillE164"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_number_to_code"
+            app:destination="@id/codeFragment" />
+        <action
+            android:id="@+id/action_number_to_helpWait"
+            app:destination="@id/helpWaitFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/codeFragment"
+        android:name="ar.com.tpp.phone.ui.signup.CodeFragment">
+        <argument
+            android:name="e164"
+            app:argType="string" />
+        <argument
+            android:name="verificationId"
+            app:argType="string" />
+        <argument
+            android:name="resendAfterSec"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_code_to_home"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/tpp_nav_graph"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_code_to_helpWait"
+            app:destination="@id/helpWaitFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/testAccountFragment"
+        android:name="ar.com.tpp.phone.ui.testaccount.TestAccountFragment">
+        <action
+            android:id="@+id/action_testAccount_to_home"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/tpp_nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="ar.com.tpp.phone.ui.home.HomeFragment">
+        <action
+            android:id="@+id/action_home_to_problem"
+            app:destination="@id/problemFragment" />
+        <action
+            android:id="@+id/action_home_to_about"
+            app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_home_to_lineMoved"
+            app:destination="@id/lineMovedFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/lineMovedFragment"
+        android:name="ar.com.tpp.phone.ui.signup.LineMovedFragment">
+        <argument
+            android:name="prefillE164"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_lineMoved_to_number"
+            app:destination="@id/numberFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/problemFragment"
+        android:name="ar.com.tpp.phone.ui.problem.ProblemFragment" />
+
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="ar.com.tpp.phone.ui.about.AboutFragment">
+        <action
+            android:id="@+id/action_about_to_problem"
+            app:destination="@id/problemFragment" />
+        <action
+            android:id="@+id/action_about_to_aboutUs"
+            app:destination="@id/aboutUsFragment" />
+        <action
+            android:id="@+id/action_about_to_privacy"
+            app:destination="@id/privacyFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/privacyFragment"
+        android:name="ar.com.tpp.phone.ui.about.PrivacyFragment" />
+
+    <fragment
+        android:id="@+id/aboutUsFragment"
+        android:name="ar.com.tpp.phone.ui.about.AboutUsFragment">
+        <action
+            android:id="@+id/action_aboutUs_to_licenses"
+            app:destination="@id/licensesFragment" />
+        <action
+            android:id="@+id/action_aboutUs_to_terms"
+            app:destination="@id/termsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/termsFragment"
+        android:name="ar.com.tpp.phone.ui.about.TermsFragment" />
+
+    <fragment
+        android:id="@+id/licensesFragment"
+        android:name="ar.com.tpp.phone.ui.about.LicensesFragment" />
+
+    <fragment
+        android:id="@+id/helpWaitFragment"
+        android:name="ar.com.tpp.phone.ui.signup.HelpWaitFragment">
+        <argument
+            android:name="helpKey"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_helpWait_to_home"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/tpp_nav_graph"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_helpWait_to_helpWait"
+            app:destination="@id/helpWaitFragment"
+            app:popUpTo="@id/helpWaitFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Home screen. -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <import type="ar.com.tpp.phone.logic.Status" />
+        <variable
+            name="viewModel"
+            type="ar.com.tpp.phone.ui.home.HomeViewModel" />
+        <variable
+            name="problemBody"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/tpp_bg"
+        android:orientation="vertical">
+
+        <!-- Header: logo + "Phone", help -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="20dp"
+            android:paddingTop="30dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="12dp">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="24dp"
+                android:contentDescription="TPP Phone"
+                android:src="@drawable/tpp_logo_phone"
+                tools:ignore="HardcodedText" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/help"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/tpp_home_help"
+                android:padding="10dp"
+                android:src="@drawable/tpp_ic_help" />
+        </LinearLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="20dp"
+                android:paddingTop="4dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="20dp">
+
+                <!-- Traffic light -->
+                <LinearLayout
+                    android:id="@+id/status_card"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@{viewModel.status == Status.READY ? @drawable/tpp_bg_status_ready : viewModel.status == Status.PROBLEM ? @drawable/tpp_bg_status_problem : @drawable/tpp_bg_status_connecting, default=@drawable/tpp_bg_status_connecting}"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="16dp"
+                    android:paddingTop="12dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="12dp">
+
+                    <!-- The halo behind the check pulses while ready (ui/LivePulseAnimator.kt, logic/LivePulse.kt). -->
+                    <FrameLayout
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:clipChildren="false">
+
+                        <View
+                            android:id="@+id/status_halo"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:alpha="0"
+                            android:background="@drawable/tpp_circle_ready"
+                            android:importantForAccessibility="no" />
+
+                        <ImageView
+                            android:id="@+id/status_icon"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:background="@{viewModel.status == Status.READY ? @drawable/tpp_circle_ready : viewModel.status == Status.PROBLEM ? @drawable/tpp_circle_problem : @drawable/tpp_circle_connecting, default=@drawable/tpp_circle_connecting}"
+                            android:importantForAccessibility="no"
+                            android:padding="8dp"
+                            android:src="@{viewModel.status == Status.READY ? @drawable/tpp_ic_check : viewModel.status == Status.PROBLEM ? @drawable/tpp_ic_alert : @drawable/tpp_ic_clock, default=@drawable/tpp_ic_clock}" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/TppText.Bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{viewModel.status == Status.READY ? @string/tpp_status_ready_title : viewModel.status == Status.PROBLEM ? @string/tpp_status_problem_title : @string/tpp_status_connecting_title, default=@string/tpp_status_connecting_title}"
+                            android:textColor="@{viewModel.status == Status.READY ? @color/tpp_ready_title : viewModel.status == Status.PROBLEM ? @color/tpp_brand_dark : @color/tpp_warning_tx, default=@color/tpp_warning_tx}"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            style="@style/TppText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:lineSpacingMultiplier="1.15"
+                            android:text="@{viewModel.status == Status.READY ? @string/tpp_status_ready_body : viewModel.status == Status.PROBLEM ? problemBody : @string/tpp_status_connecting_body, default=@string/tpp_status_connecting_body}"
+                            android:textColor="@{viewModel.status == Status.READY ? @color/tpp_ready_body : @color/tpp_text_secondary, default=@color/tpp_text_secondary}"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Number the inmate dials -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/tpp_bg_card"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <TextView
+                        style="@style/TppText.SemiBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingMultiplier="1.15"
+                        android:text="@string/tpp_dial_title"
+                        android:textColor="@color/tpp_text_secondary"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/jetbrains_mono"
+                        android:letterSpacing="0.02"
+                        android:text="@{viewModel.dialNumber}"
+                        android:textColor="@color/tpp_text"
+                        android:textIsSelectable="true"
+                        android:textSize="30sp"
+                        tools:text="9 11 2345 6789" />
+
+                    <TextView
+                        style="@style/TppText.Secondary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:lineSpacingMultiplier="1.2"
+                        android:text="@string/tpp_dial_help" />
+                </LinearLayout>
+
+                <!-- Optional contacts permission: only until asked once, and once there is a
+                     received call or a voice message to name -->
+                <TextView
+                    android:id="@+id/contacts_link"
+                    style="@style/TppText.Secondary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="@string/tpp_contacts_link"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:visibility="@{viewModel.showContactsLink &amp;&amp; ((viewModel.calls != null &amp;&amp; !viewModel.calls.isEmpty()) || (viewModel.messageItems != null &amp;&amp; !viewModel.messageItems.isEmpty())) ? View.VISIBLE : View.GONE, default=gone}" />
+
+                <!-- Voice messages: only when there are some -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="@{viewModel.messageItems == null || viewModel.messageItems.isEmpty() ? View.GONE : View.VISIBLE, default=gone}">
+
+                    <TextView
+                        style="@style/TppText.Bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="@string/tpp_voice_title"
+                        android:textSize="16sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/voice_messages"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/tpp_bg_card"
+                        android:nestedScrollingEnabled="false"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                </LinearLayout>
+
+                <!-- Received calls (no call back) -->
+                <TextView
+                    style="@style/TppText.Bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/tpp_calls_title"
+                    android:textSize="16sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/calls"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/tpp_bg_card"
+                    android:nestedScrollingEnabled="false"
+                    android:visibility="@{viewModel.calls == null || viewModel.calls.isEmpty() ? View.GONE : View.VISIBLE, default=gone}"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                <TextView
+                    style="@style/TppText.Secondary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/tpp_bg_card"
+                    android:padding="16dp"
+                    android:text="@string/tpp_calls_empty"
+                    android:visibility="@{viewModel.calls == null || viewModel.calls.isEmpty() ? View.VISIBLE : View.GONE}" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <!-- Always visible, even with a long call list. -->
+        <TextView
+            android:id="@+id/footer"
+            style="@style/TppText.Secondary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/tpp_bg"
+            android:gravity="center"
+            android:lineSpacingMultiplier="1.25"
+            android:paddingStart="20dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="14dp"
+            android:textColorLink="@color/tpp_brand_dark"
+            android:textSize="12sp" />
+    </LinearLayout>
+</layout>

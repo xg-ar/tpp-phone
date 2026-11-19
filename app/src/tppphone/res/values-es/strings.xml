@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- tppphone: overrides upstream values-es strings that name the app (they win over values/). -->
+<resources>
+    <string name="notification_channel_call_name">Llamadas en curso</string>
+    <string name="notification_channel_missed_call_name">Llamadas perdidas</string>
+    <string name="notification_channel_service_name">Servicio de TPP Phone</string>
+    <string name="notification_channel_chat_name">Mensajes</string>
+    <string name="notification_channel_incoming_call_name">Llamadas entrantes</string>
+    <string name="notification_push_received_title">TPP Phone</string>
+    <string name="notification_file_transfer_title">TPP Phone</string>
+</resources>

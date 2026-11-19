@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- First run;
+     steps and button changed for the signup (number + WhatsApp code). -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/tpp_bg"
+        android:orientation="vertical">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="24dp"
+                android:paddingTop="40dp"
+                android:paddingEnd="24dp">
+
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="180dp"
+                    android:layout_height="36dp"
+                    android:contentDescription="TPP Phone"
+                    android:src="@drawable/tpp_logo_phone"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    style="@style/TppText.Headline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/tpp_first_run_title" />
+
+                <TextView
+                    style="@style/TppText.Secondary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:lineSpacingMultiplier="1.3"
+                    android:text="@string/tpp_first_run_body"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TppText.Bold"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:background="@drawable/tpp_circle_tint"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textColor="@color/tpp_brand_dark"
+                        tools:ignore="HardcodedText" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/TppText.Bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tpp_first_run_step1_title"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            style="@style/TppText.Secondary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:lineSpacingMultiplier="1.15"
+                            android:text="@string/tpp_first_run_step1_body"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TppText.Bold"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:background="@drawable/tpp_circle_tint"
+                        android:gravity="center"
+                        android:text="2"
+                        android:textColor="@color/tpp_brand_dark"
+                        tools:ignore="HardcodedText" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/TppText.Bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tpp_first_run_step2_title"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            style="@style/TppText.Secondary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:lineSpacingMultiplier="1.15"
+                            android:text="@string/tpp_first_run_step2_body"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TppText.Bold"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:background="@drawable/tpp_circle_tint"
+                        android:gravity="center"
+                        android:text="3"
+                        android:textColor="@color/tpp_brand_dark"
+                        tools:ignore="HardcodedText" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/TppText.Bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tpp_first_run_step3_title"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            style="@style/TppText.Secondary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:lineSpacingMultiplier="1.15"
+                            android:text="@string/tpp_first_run_step3_body"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="24dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="32dp">
+
+            <TextView
+                android:id="@+id/activate"
+                style="@style/TppText.Bold"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/tpp_bg_button_brand"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@string/tpp_first_run_whatsapp"
+                android:textColor="@android:color/white"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

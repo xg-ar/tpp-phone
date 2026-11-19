@@ -1,0 +1,18 @@
+TPP Phone
+Copyright (C) 2026 XG Networks / TPP
+
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
+version. It is distributed WITHOUT ANY WARRANTY; without even the implied
+warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See
+https://www.gnu.org/licenses/gpl-3.0.html
+
+TPP Phone is based on Linphone for Android and the Linphone SDK,
+Copyright (C) 2010-2025 Belledonne Communications SARL, GNU GPL v3.
+"Linphone" is a trademark of Belledonne Communications.
+
+It also uses:
+- AndroidX, Material Components, Firebase Cloud Messaging (Apache License 2.0)
+- Coil, Flexbox, PhotoView, AppAuth (Apache License 2.0)
+- Plus Jakarta Sans, JetBrains Mono fonts (SIL Open Font License 1.1, below)

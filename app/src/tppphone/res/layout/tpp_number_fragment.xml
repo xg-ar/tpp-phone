@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Signup step 1: the relative's mobile number. "Enviar código" sits right under
+     the field so the keyboard doesn't hide it. -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/tpp_bg"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/header"
+            layout="@layout/tpp_back_header" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="24dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="24dp">
+
+                <TextView
+                    style="@style/TppText.Headline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tpp_number_title" />
+
+                <TextView
+                    style="@style/TppText.Secondary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:lineSpacingMultiplier="1.3"
+                    android:text="@string/tpp_number_body" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="24dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/country"
+                        style="@style/TppText.SemiBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/tpp_bg_card"
+                        android:clickable="true"
+                        android:contentDescription="@string/tpp_number_country"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/number"
+                        style="@style/TppText"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:autofillHints="phoneNational"
+                        android:background="@drawable/tpp_bg_card"
+                        android:hint="@string/tpp_number_hint"
+                        android:imeOptions="actionDone"
+                        android:inputType="phone"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/send"
+                    style="@style/TppText.Bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/tpp_bg_button_brand"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="@string/tpp_number_send"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp" />
+
+                <ProgressBar
+                    android:id="@+id/progress"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:indeterminateTint="@color/tpp_brand"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/error"
+                    style="@style/TppText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@color/tpp_problem_title"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/help"
+                    style="@style/TppText.Bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/tpp_bg_button_whatsapp"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="@string/tpp_signup_help"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</layout>

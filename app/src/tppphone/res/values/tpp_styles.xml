@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TppText">
+        <item name="android:fontFamily">@font/plus_jakarta_sans</item>
+        <item name="android:textColor">@color/tpp_text</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textFontWeight">400</item>
+    </style>
+
+    <style name="TppText.Secondary">
+        <item name="android:textColor">@color/tpp_text_secondary</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="TppText.Bold">
+        <item name="android:textFontWeight">700</item>
+    </style>
+
+    <style name="TppText.SemiBold">
+        <item name="android:textFontWeight">600</item>
+    </style>
+
+    <style name="TppText.Headline">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textFontWeight">700</item>
+        <item name="android:lineSpacingMultiplier">1.15</item>
+        <item name="android:letterSpacing">-0.01</item>
+    </style>
+</resources>

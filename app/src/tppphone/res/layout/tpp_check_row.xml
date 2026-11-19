@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- One readiness check on the problem screen: "Bien" when OK; explanation + button when PROBLEM
+     (solid button) or RECOMMENDED (outlined button, does not turn the traffic light red). -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <import type="ar.com.tpp.phone.logic.CheckState" />
+        <variable
+            name="state"
+            type="CheckState" />
+        <variable
+            name="title"
+            type="String" />
+        <variable
+            name="body"
+            type="CharSequence" />
+        <variable
+            name="action"
+            type="String" />
+        <variable
+            name="isLast"
+            type="Boolean" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@{state == CheckState.PROBLEM ? @color/tpp_problem_row_bg : @android:color/transparent}"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingTop="9dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="9dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:importantForAccessibility="no"
+                    android:src="@{state == CheckState.OK ? @drawable/tpp_ic_check : state == CheckState.PROBLEM ? @drawable/tpp_ic_x : state == CheckState.RECOMMENDED ? @drawable/tpp_ic_alert_circle : @drawable/tpp_ic_clock}"
+                    android:tint="@{state == CheckState.OK ? @color/tpp_success_tx : state == CheckState.PROBLEM ? @color/tpp_brand_dark : @color/tpp_warning_tx}" />
+
+                <TextView
+                    style="@style/TppText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:text="@{title}"
+                    android:textFontWeight="600"
+                    android:textSize="14sp"
+                    tools:text="Notificaciones desactivadas" />
+
+                <TextView
+                    style="@style/TppText.SemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{state == CheckState.OK ? @string/tpp_problem_ok : state == CheckState.RECOMMENDED ? @string/tpp_problem_recommended : @string/tpp_problem_pending}"
+                    android:textColor="@{state == CheckState.OK ? @color/tpp_success_tx : @color/tpp_warning_tx}"
+                    android:textSize="12sp"
+                    android:visibility="@{state == CheckState.PROBLEM ? View.GONE : View.VISIBLE}" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/TppText.Secondary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="4dp"
+                android:lineSpacingMultiplier="1.1"
+                android:text="@{body}"
+                android:textSize="12sp"
+                android:visibility="@{state == CheckState.PROBLEM || state == CheckState.RECOMMENDED ? View.VISIBLE : View.GONE}" />
+
+            <TextView
+                android:id="@+id/action_button"
+                style="@style/TppText.Bold"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="6dp"
+                android:background="@{state == CheckState.RECOMMENDED ? @drawable/tpp_bg_button_outline : @drawable/tpp_bg_button_brand}"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@{action}"
+                android:textSize="13sp"
+                android:textColor="@{state == CheckState.RECOMMENDED ? @color/tpp_brand_dark : @android:color/white}"
+                android:visibility="@{(state == CheckState.PROBLEM || state == CheckState.RECOMMENDED) &amp;&amp; action != null ? View.VISIBLE : View.GONE}" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/tpp_border"
+            android:visibility="@{isLast ? View.GONE : View.VISIBLE}" />
+    </LinearLayout>
+</layout>

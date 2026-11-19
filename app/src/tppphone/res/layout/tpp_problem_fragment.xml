@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Problem screen. Rows are added by ProblemFragment. -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="allOk"
+            type="Boolean" />
+        <variable
+            name="summary"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/tpp_bg"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/header"
+            layout="@layout/tpp_back_header" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="20dp"
+                android:paddingTop="4dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@{allOk ? @drawable/tpp_bg_status_ready : @drawable/tpp_bg_status_problem}"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="16dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="10dp">
+
+                    <!-- The halo behind the check pulses when all is OK (ui/LivePulseAnimator.kt). -->
+                    <FrameLayout
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:clipChildren="false">
+
+                        <View
+                            android:id="@+id/status_halo"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:alpha="0"
+                            android:background="@drawable/tpp_circle_ready"
+                            android:importantForAccessibility="no" />
+
+                        <ImageView
+                            android:id="@+id/status_icon"
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:background="@{allOk ? @drawable/tpp_circle_ready : @drawable/tpp_circle_problem}"
+                            android:importantForAccessibility="no"
+                            android:padding="7dp"
+                            android:src="@{allOk ? @drawable/tpp_ic_check : @drawable/tpp_ic_alert}" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/TppText.Bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{allOk ? @string/tpp_problem_all_ok_title : @string/tpp_status_problem_title}"
+                            android:textColor="@{allOk ? @color/tpp_ready_title : @color/tpp_problem_title}"
+                            android:textSize="15sp" />
+
+                        <!-- When all is OK, ProblemFragment appends the "Probalo" link to this text. -->
+                        <TextView
+                            android:id="@+id/status_body"
+                            style="@style/TppText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:lineSpacingMultiplier="1.15"
+                            android:text="@{allOk ? @string/tpp_problem_all_ok_body : summary}"
+                            android:textColor="@{allOk ? @color/tpp_ready_body : @color/tpp_problem_body}"
+                            android:textSize="13sp"
+                            tools:text="Hay 2 cosas para resolver. Te guiamos paso a paso." />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/checks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/tpp_bg_card"
+                    android:orientation="vertical"
+                    android:paddingTop="1dp"
+                    android:paddingBottom="1dp" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingTop="6dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="14dp">
+
+            <!-- Real users did not find the small back arrow. -->
+            <TextView
+                android:id="@+id/home"
+                style="@style/TppText.Bold"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/tpp_bg_button_brand"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@string/tpp_problem_home"
+                android:textColor="@android:color/white"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

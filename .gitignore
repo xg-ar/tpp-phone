@@ -1,0 +1,17 @@
+*.iml
+.gradle
+/local.properties
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+app/debug/
+app/release/
+.idea/
+app/bc-android.keystore
+.kotlin/
+
+# XG: Firebase config is per environment, never committed
+app/google-services.json

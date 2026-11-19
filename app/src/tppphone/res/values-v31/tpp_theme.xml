@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Android 12+ system splash: TPP icon on the brand cream background. -->
+    <style name="Theme.TppPhone" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/tpp_brand</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorPrimaryContainer">@color/tpp_brand_tint</item>
+        <item name="android:colorBackground">@color/tpp_bg</item>
+        <item name="android:windowBackground">@color/tpp_bg</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:windowSplashScreenBackground">@color/tpp_bg</item>
+    </style>
+</resources>

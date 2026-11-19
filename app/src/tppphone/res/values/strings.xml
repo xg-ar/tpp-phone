@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- tppphone: TPP Phone is Spanish-first, so the default strings are Spanish. These override
+     the Linphone strings a TPP user can see (call screen, notifications) that upstream
+     does not translate or that name "Linphone". -->
+<resources>
+    <string name="app_name" translatable="false">TPP Phone</string>
+    <string name="notification_channel_call_name">Llamadas en curso</string>
+    <string name="notification_channel_missed_call_name">Llamadas perdidas</string>
+    <string name="notification_channel_service_name">Servicio de TPP Phone</string>
+    <string name="notification_channel_chat_name">Mensajes</string>
+    <string name="notification_channel_incoming_call_name">Llamadas entrantes</string>
+    <string name="notification_push_received_title">TPP Phone</string>
+    <string name="notification_file_transfer_title">TPP Phone</string>
+    <string name="notification_account_registration_error_message">Abrí TPP Phone para volver a conectarte</string>
+    <string name="notification_channel_account_error_name">Problemas con la cuenta</string>
+    <string name="notification_disable_speaker_for_call">Apagar altavoz</string>
+    <string name="notification_enable_speaker_for_call">Encender altavoz</string>
+    <string name="notification_in_call_foreground_service_error_message">Tocá esta notificación para resolverlo</string>
+    <string name="notification_in_call_foreground_service_error_title">¡No te están escuchando!</string>
+    <string name="notification_keep_app_alive_description">Esta notificación mantiene TPP Phone activa para recibir llamadas</string>
+    <string name="call_action_answer">Atender</string>
+    <string name="call_action_decline">Rechazar</string>
+    <string name="call_audio_incoming">Llamada entrante</string>
+    <string name="call_audio_incoming_for_account">Llamada entrante para %s</string>
+    <string name="call_video_incoming">Llamada entrante</string>
+    <string name="call_video_incoming_for_account">Llamada entrante para %s</string>
+    <string name="call_outgoing">Llamada saliente</string>
+    <string name="call_locally_ended">Cortaste la llamada</string>
+    <string name="call_remotely_ended">La llamada terminó</string>
+    <string name="call_state_paused">En espera</string>
+    <string name="call_state_paused_by_remote">En espera</string>
+    <string name="call_not_encrypted">Llamada sin cifrar</string>
+    <string name="call_srtp_point_to_point_encrypted">Llamada cifrada</string>
+    <string name="call_waiting_for_encryption_info">Esperando cifrado…</string>
+    <string name="call_audio_record_permission_not_granted_toast">Falta el permiso de micrófono</string>
+    <string name="call_stats_audio_title">Audio</string>
+    <string name="call_stats_codec_label">Códec: %s</string>
+    <string name="call_stats_bandwidth_label">Ancho de banda: %s</string>
+    <string name="call_stats_loss_rate_label">Pérdida: %s</string>
+    <string name="call_stats_jitter_buffer_label">Jitter buffer: %s</string>
+    <string name="call_stats_media_encryption">Cifrado: %s</string>
+    <string name="call_stats_ip_family_label">Familia IP: %s</string>
+    <string name="call_stats_ice_label">ICE: %s</string>
+    <string name="content_description_answer_audio_call">Atiende la llamada</string>
+    <string name="content_description_hang_up_call">Corta la llamada</string>
+    <string name="content_description_toggle_microphone">Silencia o activa el micrófono</string>
+    <string name="content_description_change_output_audio_device">Cambia entre auricular, altavoz o Bluetooth</string>
+    <string name="content_description_show_call_statistics">Muestra datos de la llamada</string>
+    <string name="content_description_go_back_icon">Volver</string>
+    <string name="content_description_show_popup_menu">Mostrar menú</string>
+    <string name="content_description_toggle_bottom_sheet">Muestra u oculta más opciones</string>
+</resources>
